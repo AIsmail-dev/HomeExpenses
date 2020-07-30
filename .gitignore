@@ -5,6 +5,5 @@
 /HomeExpenses.Data/bin/Debug
 /HomeExpenses.Data/obj/Debug
 /HomeExpenses.Web/Bin
-/_.vs
-/.vs
 /HomeExpenses.Data/obj/Release/.NETFramework,Version=v4.5.AssemblyAttributes.cs
+/.vs
