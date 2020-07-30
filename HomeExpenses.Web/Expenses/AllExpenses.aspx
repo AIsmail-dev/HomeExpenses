@@ -4,20 +4,37 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
-        .table td, .table th {
-            padding: 0 2px 0 2px !important;
+      .background-section {
+    background: url('https://image.freepik.com/free-vector/money-saving-concept_52683-8041.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    margin-bottom:50px;
+}
+        .img-liner {
+            background:rgba(0,0,0,.8);
+            padding:100px 0 100px 0;
+
         }
     </style>
+
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>المدفوعات</h1>
+        <div class="background-section">
+            <div class="img-liner">
+    <h1 class="text-center" style="color:white; font-weight:800">المدفوعات</h1>
+        </div>
+            </div>
     <p>
-        <a href="addExpense.aspx">اضافة مدقوع</a>
-        <a href="ChangeCurrentMonth.aspx">تغيير الشهر الحالى</a>
+        <a href="addExpense.aspx" class="btn btn-primary">اضافة مدفوع</a>
+        <a href="ChangeCurrentMonth.aspx" class="btn btn-warning">تغيير الشهر الحالى</a>
     </p>
-    <table class="table">
-        <thead>
-            <tr>
+    
+
+    <table class="table table-bordered text-center ">
+        <thead >
+            <tr class="bg-info" style="color:#fff">
                 <th>اجمالى قيمة المدفوعات
                 </th>
                 <th>المبلغ المتبقى
@@ -26,25 +43,29 @@
         </thead>
         <tbody>
             <tr>
-                <td>
+                <td style="color:forestgreen;font-weight:700;font-size:20px">
                     <label id="lblTotalPayed" runat="server"></label>
+                    SAR
                 </td>
-                <td>
+                <td style="color:red;font-weight:700;font-size:20px">
                     <label id="lblRest" runat="server"></label>
+                    SAR
                 </td>
             </tr>
         </tbody>
     </table>
     <% foreach (var itemExpense in ItemExpensesList)
         { %>
-    <table class="table" style="border-style: inset; margin-bottom: 10px;">
-        <thead>
-            <tr>
+
+    <div class="table-responsive-md table-sm">
+    <table class="table table-bordered table-responsive-stack" style="border: 1px solid #ddd; margin-bottom: 10px;">
+        <thead >
+            <tr class="thead-dark">
                 <th>اسم الصنف
                 </th>
                 <th>السعر الاقصى للصنف
                 </th>
-                <th>اجمالى قيمة المدفوع من الصنف
+                <th >اجمالى قيمة المدفوع من الصنف
                 </th>
                 <th>المتبقى من رصيد الصنف
                 </th>
@@ -54,19 +75,21 @@
             <tr>
                 <td><%= itemExpense.ItemName %>
                 </td>
-                <td><%= itemExpense.ItemPrice %>
+                <td style="color:blue; font-weight:700""><%= itemExpense.ItemPrice %> SAR
                 </td>
-                <td><%= itemExpense.ExpensesPrices %>
+                <td style="color:forestgreen; font-weight:700"><%= itemExpense.ExpensesPrices %> SAR
                 </td>
-                <td><%= itemExpense.ItemPrice - itemExpense.ExpensesPrices %>
+                <td style="color:red; font-weight:700"><%= itemExpense.ItemPrice - itemExpense.ExpensesPrices %> SAR
                 </td>
             </tr>
             <tr>
                 <td colspan="4">
-                    <table class="table" style="border-style: groove; margin-bottom: 5px;">
+                    <div class="table-responsive-md">
+
+                    <table class="table table-bordered table-striped table-responsive-stack" style="margin-bottom: 5px;">
                         <thead>
-                            <tr>
-                                <th>اسم المدفوع
+                            <tr >
+                                <th >اسم المدفوع
                                 </th>
                                 <th>سعر المدفوع
                                 </th>
@@ -90,7 +113,7 @@
                             <tr>
                                 <td><%= expense.Name %>
                                 </td>
-                                <td><%= expense.Price %>
+                                <td style="color:forestgreen; font-weight:700"><%= expense.Price %> SAR
                                 </td>
                                 <td><%= expense.RelateToMonth.ToString("M/yyyy") %>
                                 </td>
@@ -102,15 +125,19 @@
                                 </td>
                                 <td><%= expense.Payed == true ? "نعم" : "لا" %>
                                 </td>
-                                <td><a href="addExpense.aspx?expenseId=<%: expense.ExpenseId %>">تعديل المدفوع</a>
+                                <td><a class="btn btn-primary"  href="addExpense.aspx?expenseId=<%: expense.ExpenseId %>">تعديل المدفوع</a>
                                 </td>
                             </tr>
                             <%} %>
                         </tbody>
                     </table>
+                        </div>
                 </td>
             </tr>
         </tbody>
     </table>
+        </div>
+
+
     <%} %>
 </asp:Content>
