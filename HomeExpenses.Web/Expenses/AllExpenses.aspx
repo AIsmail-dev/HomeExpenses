@@ -43,11 +43,11 @@
         </thead>
         <tbody>
             <tr>
-                <td style="color:forestgreen;font-weight:700;font-size:20px">
+                <td style="color:red;font-weight:700;font-size:20px">
                     <label id="lblTotalPayed" runat="server"></label>
                     SAR
                 </td>
-                <td style="color:red;font-weight:700;font-size:20px">
+                <td style="color:forestgreen;font-weight:700;font-size:20px">
                     <label id="lblRest" runat="server"></label>
                     SAR
                 </td>
@@ -77,9 +77,9 @@
                 </td>
                 <td style="color:blue; font-weight:700""><%= itemExpense.ItemPrice %> SAR
                 </td>
-                <td style="color:forestgreen; font-weight:700"><%= itemExpense.ExpensesPrices %> SAR
+                <td style="color:red; font-weight:700"><%= itemExpense.ExpensesPrices %> SAR
                 </td>
-                <td style="color:red; font-weight:700"><%= itemExpense.ItemPrice - itemExpense.ExpensesPrices %> SAR
+                <td style="color:forestgreen; font-weight:700"><%= itemExpense.ItemPrice - itemExpense.ExpensesPrices %> SAR
                 </td>
             </tr>
             <tr>

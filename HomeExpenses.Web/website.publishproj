@@ -18,7 +18,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{d0bd9586-9171-4b10-bd82-94f1163878d1}</ProjectGuid>
     <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
-    <SourceWebVirtualPath>/HomeExpenses</SourceWebVirtualPath>
+    <SourceWebVirtualPath>/HomeExpenses.Web</SourceWebVirtualPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <SourceWebProject>
     </SourceWebProject>
