@@ -13,6 +13,8 @@ namespace HomeExpenses.Web
         public List<ItemExpenses> ItemExpensesList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Cookies["ClientCurrentDate"] == null || string.IsNullOrEmpty(Request.Cookies["ClientCurrentDate"].Value))
+            { Response.Redirect("/Users/Login.aspx"); return; }
             RegisterAsyncTask(new PageAsyncTask(Page_LoadAsync));
         }
         public async Task Page_LoadAsync()
