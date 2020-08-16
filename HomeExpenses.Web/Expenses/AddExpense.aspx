@@ -13,11 +13,11 @@
             </div>
             <div class="form-group">
                 <label class="control-label">اسم المدفوع</label>
-                <input id="txtName" name="txtName" runat="server" class="form-control" />
+                <input id="txtName" name="txtName" runat="server" class="form-control" onfocus="selectName()" />
             </div>
             <div class="form-group">
                 <label class="control-label">سعر المدفوع</label>
-                <input id="txtPrice" name="txtPrice" runat="server" class="form-control" />
+                <input id="txtPrice" name="txtPrice" runat="server" class="form-control" onfocus="selectPrice()" />
             </div>
             <div class="form-group">
                 <label class="control-label">شهر المدفوع</label>
@@ -62,6 +62,16 @@
             document.getElementById('<%: txtName.ClientID %>').value = e.selectedOptions[0].attributes["name"].value;
             document.getElementById('<%: txtPrice.ClientID %>').value = e.selectedOptions[0].attributes["price"].value;
         }
+        <%if (string.IsNullOrEmpty(Request.QueryString["ExpenseId"]))
+        {%>
         changeItem();
+        <% } %>
+        document.getElementById('<%: slcItemId.ClientID %>').focus();
+        function selectPrice() {
+            document.getElementById('<%: txtPrice.ClientID %>').select();
+        }
+        function selectName() {
+            document.getElementById('<%: txtName.ClientID %>').select();
+        }
     </script>
 </asp:Content>

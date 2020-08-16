@@ -45,6 +45,7 @@ namespace HomeExpenses.Web
                 }
             else
             {
+                chkPayed.Checked = true;
                 using (var clientService = new ClientService())
                 {
                     var client = await clientService.GetClientByIdAsync(1);
