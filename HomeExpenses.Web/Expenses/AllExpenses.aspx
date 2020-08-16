@@ -9,9 +9,31 @@
             background-repeat: no-repeat;
             margin-bottom: 50px;
         }
+        .table thead th {
+            vertical-align: middle;
+        }
         .img-liner {
             background: rgba(0,0,0,.8);
             padding: 100px 0 100px 0;
+        }
+
+        @media (min-width: 280px) and (max-width: 767.98px) {
+        .table .thead-dark th {
+            font-size:9px;
+        }
+        .table .thead-dark th {
+            padding: 8px 5px;
+        }
+        .table td {
+            padding: 8px 5px !important;
+            font-size:10px;
+        }
+        .table-bordered thead th {
+            font-size:9px
+        }
+        td .btn-primary {
+            font-size:8px;
+        }
         }
     </style>
 </asp:Content>
@@ -21,6 +43,7 @@
             <h1 class="text-center" style="color: white; font-weight: 800">المدفوعات</h1>
         </div>
     </div>
+    <div class="container pr-0 pl-0">
     <p>
         <a href="addExpense.aspx" class="btn btn-primary">اضافة مدفوع</a>
         <a href="ChangeCurrentMonth.aspx" class="btn btn-warning">تغيير الشهر الحالى</a>
@@ -49,7 +72,7 @@
     </table>
     <% foreach (var itemExpense in ItemExpensesList)
         { %>
-    <div class="table-responsive-md table-sm">
+    <div class="table-responsive-md table-sm container p-0">
         <table class="table table-bordered table-responsive-stack" style="border: 1px solid #ddd; margin-bottom: 10px;">
             <thead>
                 <tr class="thead-dark">
@@ -116,5 +139,6 @@
             </tbody>
         </table>
     </div>
+        </div>
     <%} %>
 </asp:Content>
