@@ -5,13 +5,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>الاصناف</h1>
-    <p>
-        <a href="addItem.aspx">اضافة صنف</a>
+    <style>
+
+        .items-bacground {
+            background: url('../css/img/items.jpg');
+            
+            background-position: center center;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+
+        .items-bacground-wapper {
+            background-color:rgb(0, 0, 0,0.8);
+            padding:200px;
+        }
+    </style>
+    <div class="items-bacground">
+        <div class="items-bacground-wapper">
+    <h1 class="text-center" style="color: white;
+    font-weight: 800;">الاصناف</h1>
+        </div>
+        </div>
+    
+    <div class="container">
+    <p class="pt-5 pb-5">
+        <a href="addItem.aspx" class="btn btn-success">اضافة صنف</a>
     </p>
-    <table class="table">
+    <table class="table table-bordered table-responsive-stack table-striped">
         <thead>
-            <tr>
+            <tr class="thead-dark">
                 <th>اسم الصنف
                 </th>
                 <th>نوع الصنف
@@ -34,16 +56,19 @@
                 </td>
                 <td><%= item.ItemTypeId %>
                 </td>
-                <td><%= item.Price %>
+                <td style="    color: forestgreen;
+    font-weight: 700;"><%= item.Price %>
+                    SAR
                 </td>
                 <td><%= item.DefaultIncluded ? "نعم" : "لا" %>
                 </td>
                 <td><%= item.MonthsPeriod %>
                 </td>
-                <td><a href="addItem.aspx?itemId=<%: item.ItemId %>">تعديل الصنف</a>
+                <td><a href="addItem.aspx?itemId=<%: item.ItemId %>" class="btn btn-primary">تعديل الصنف</a>
                 </td>
             </tr>
             <%} %>
         </tbody>
     </table>
+        </div>
 </asp:Content>
