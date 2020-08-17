@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
         .background-section {
-            background: url('https://image.freepik.com/free-vector/money-saving-concept_52683-8041.jpg');
+            background: url('../css/img/payment.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -14,7 +14,7 @@
         }
         .img-liner {
             background: rgba(0,0,0,.8);
-            padding: 100px 0 100px 0;
+            padding: 200px 0;
         }
 
         @media (min-width: 280px) and (max-width: 767.98px) {

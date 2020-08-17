@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/site.css" />
 </head>
-<body style="direction: rtl; text-align: right;">
+<body style="direction: rtl; text-align: right; margin:0;">
     <% if (Request.Cookies["UserId"] != null && !string.IsNullOrEmpty(Request.Cookies["UserId"].Value))
         {
             Response.Cookies.Clear();
@@ -286,7 +286,7 @@ highlightTextIn a:before
     %>
     <div class="">
         <form id="form2" runat="server">
-            <main role="main" class="pb-3">
+            <main role="main">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </main>

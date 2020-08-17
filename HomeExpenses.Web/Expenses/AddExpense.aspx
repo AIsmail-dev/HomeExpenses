@@ -2,23 +2,76 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>اضافة مدفوع</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
+    <style>
+        #ContentPlaceHolder1_slcItemId,#ContentPlaceHolder1_slcRelatedMonth {
+            padding:3px;
+        }
+        .form-control:focus {
+    color: #495057;
+    background-color: transparent;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    color:#fff;
+}
+        label {
+            color:#fff;
+        }
+        .form-control {
+            border-radius:unset;
+            background-color: transparent;
+            color:#fff;
+            border: none;
+            border-right :1px solid #fff !important;
+            border-bottom:1px solid #fff !important;
+        }
+        .background-edit-Item {
+      
+            background: url('../css/img/edit-item.jpg');
+            
+            background-position: center center;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+        .background-edit-Item__wapper{
+            background-color:rgb(0, 0, 0,0.9);
+            padding:88px 0;
+        }
+        option {
+            color:#000;
+        }
+        
+    </style>
+<div class="background-edit-Item">
+    <div class="background-edit-Item__wapper">
+    <h1 class="text-center pb-5" style="color: white;
+    font-weight: 800;">اضافة مدفوع</h1>
+    <div class="container">
+    <div class="row no-gutters mx-auto justify-content-center">
+        <div class="col-md-10">
+            <div class="row">
+            <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">الصنف</label>
                 <select id="slcItemId" name="slcItemId" runat="server" class="form-control" onchange="changeItem()">
                 </select>
             </div>
+                </div>
+
+            <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">اسم المدفوع</label>
                 <input id="txtName" name="txtName" runat="server" class="form-control" onfocus="selectName()" />
             </div>
+                </div>
+
+            <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">سعر المدفوع</label>
                 <input id="txtPrice" name="txtPrice" runat="server" class="form-control" onfocus="selectPrice()" />
             </div>
+                </div>
+            <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">شهر المدفوع</label>
                 <select id="slcRelatedMonth" name="slcRelatedMonth" runat="server" class="form-control">
@@ -42,19 +95,31 @@
                     <option value="1-12-2021">12 / 2021</option>
                 </select>
             </div>
+                </div>
+                <div class="col-md-12">
             <div class="form-group">
                 <label class="control-label">التفاصيل</label>
-                <textarea id="txtDescription" name="txtDescription" runat="server" class="form-control" />
+                <textarea id="txtDescription" name="txtDescription" style="border-radius:unset" runat="server" class="form-control" />
             </div>
-            <div class="form-group">
+                    </div>
+                <div class="col-md-6 ">
+            <div class="form-group d-flex align-items-center">
                 <label class="control-label">تم السداد</label>
                 <input id="chkPayed" runat="server" type="checkbox" class="form-control" />
             </div>
-            <div class="form-group">
-                <asp:Button id="btnSave" runat="server" Text="حفظ" OnClick="BtnSave_Click" />
-                <a href="AllExpenses.aspx">العودة</a>
+                    </div>
+
+                <div class="col-md-6 ">
+            <div class="form-group d-flex align-items-center">
+                <asp:Button id="btnSave" runat="server" Text="حفظ " OnClick="BtnSave_Click" class="btn btn-success pr-4 pl-4"/>
+                <a href="AllExpenses.aspx" class="btn btn-info mr-3 pr-4 pl-4">العودة</a>
             </div>
+                    </div>
         </div>
+    </div>
+    </div>
+        </div>
+    </div>
     </div>
     <script>
         function changeItem() {
