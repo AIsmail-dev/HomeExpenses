@@ -2,10 +2,51 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>تغيير الشهر الحالى</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
+    <style>
+        .month-editbackground {
+      
+            background: url('../css/img/month-img.jpg');
+            
+            background-position: center center;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+        .month-editbackground__wrapper{
+            background-color:rgb(0, 0, 0,0.9);
+            padding:130px 0;
+        }
+        .form-control:focus {
+            color: #495057;
+            background-color: transparent !important;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+            color: #fff;
+        }
+        label {
+            color:#fff;
+        }
+        .form-control {
+            border-radius:unset;
+            background-color: transparent !important;
+            color:#fff;
+            border: none;
+            border-right :1px solid #fff !important;
+            border-bottom:1px solid #fff !important;
+        }
+        option {
+            color:#000
+        }
+    </style>
+
+
+    <div class="month-editbackground">
+    <div class="month-editbackground__wrapper">
+    <div class="container">
+    <h1 class="text-center pb-5" style="color: white;
+    font-weight: 800;">تغيير الشهر الحالى</h1>
+    <div class="row no-gutters mx-auto">
+        <div class="col-md-8">
             <div class="form-group">
                 <label class="control-label">شهر المدفوع</label>
                 <select id="slcRelatedMonth" name="slcRelatedMonth" runat="server" class="form-control">
@@ -29,10 +70,13 @@
                     <option value="1-12-2021">12 / 2021</option>
                 </select>
             </div>
-            <div class="form-group">
-                <asp:Button id="btnSave" runat="server" Text="حفظ" OnClick="BtnSave_Click" />
-                <a href="AllExpenses.aspx">العودة</a>
+            <div class="form-group pt-5">
+                <asp:Button id="btnSave" runat="server" Text="حفظ" OnClick="BtnSave_Click" class="btn btn-success pr-4 pl-4"/>
+                <a href="AllExpenses.aspx" class="btn btn-info mr-3 pr-4 pl-4">العودة</a>
             </div>
+        </div>
+    </div>
+        </div>
         </div>
     </div>
 </asp:Content>
