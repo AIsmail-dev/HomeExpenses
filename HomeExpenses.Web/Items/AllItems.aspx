@@ -17,8 +17,28 @@
 
         .items-bacground-wapper {
             background-color:rgb(0, 0, 0,0.8);
-            padding:200px;
+            padding:200px 0;
         }
+
+        @media (min-width: 280px) and (max-width: 767.98px) {
+        .table td,.table .thead-dark th {
+            padding:4px !important;
+            font-size:9px;
+        }
+        .btn-primary {
+            font-size:7px;
+        }
+        }
+        @media (min-width: 767.98px) {
+        .table td,.table .thead-dark th {
+            padding:10px 6px !important;
+            font-size:16px;
+        }
+        .btn-primary {
+            font-size:12px;
+        }
+        }
+
     </style>
     <div class="items-bacground">
         <div class="items-bacground-wapper">
@@ -30,6 +50,7 @@
     <div class="container">
     <p class="pt-5 pb-5">
         <a href="addItem.aspx" class="btn btn-success">اضافة صنف</a>
+
     </p>
     <table class="table table-bordered table-responsive-stack table-striped">
         <thead>
@@ -71,4 +92,5 @@
         </tbody>
     </table>
         </div>
+ 
 </asp:Content>
